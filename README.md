@@ -59,6 +59,12 @@ This is the defacto image. By default the miner will donate 1% of the hashpower 
 
 This variant has no donation fee.
 
+# Bonus
+
+nvidia-cluster-set.sh is a small utility to properly set all geforce in your mining rig: undervolting, under or overclocking
+run it in a gnome terminal (require x windows)
+
+
 # Creating image from source 
 
 Install docker.io with this apt command:
