@@ -9,8 +9,6 @@ RUN apt-get update \
 
 RUN set -x \
     && buildDeps=' \
-        nvidia-cuda-dev \
-        nvidia-cuda-toolkit \
         git \
         libmicrohttpd-dev \
         libssl-dev \
