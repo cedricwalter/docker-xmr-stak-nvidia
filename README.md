@@ -27,6 +27,9 @@ Docker has been installed and is running on the system.
 cd docker-xmr-stak-nvidia
 
 docker build -t xmr-stak-nvidia .
+or
+cd nodevfee
+docker build -f xmr-stak-nvidia:nodevfee . 
 ```
 
 ## Configuration file
