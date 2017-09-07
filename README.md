@@ -1,36 +1,15 @@
 # What is XMR-Stak-Nvidia?
 
-XMR-Stak-Nvidia is a universal Stratum pool miner. This is the Nvidia GPU-mining version.
+XMR-Stak-Nvidia is a universal Stratum pool miner. This is the Nvidia GPU-mining version running in docker.
+
 
 ## Links
 
-- [Source Code](https://github.com/fireice-uk/xmr-stak-nvidia)
+- [XMR-Stak-Nvidia Source Code](https://github.com/fireice-uk/xmr-stak-nvidia)
 
 # How to use this image
 
 You MUST install first [Nvidia-docker]()https://github.com/NVIDIA/nvidia-docker)
-
-# Creating image from source 
-
-Install docker.io with this apt command:
-```sudo apt-get install docker.io
-```
-
-When the installation is finished, start the docker service and enable it to start at boot time:
-```sudo systemctl start docker
-sudo systemctl enable docker
-```
-
-Docker has been installed and is running on the system.
-
-```git clone https://github.com/cedricwalter/docker-xmr-stak-nvidia.git
-cd docker-xmr-stak-nvidia
-
-docker build -t xmr-stak-nvidia .
-or
-cd nodevfee
-docker build -f xmr-stak-nvidia:nodevfee . 
-```
 
 ## Configuration file
 
@@ -51,7 +30,7 @@ or copy example from [GitHub](https://github.com/fireice-uk/xmr-stak-nvidia/blob
 Run in background:
 
 ```console
-$ docker run -itd --name some-xmr-stak-nvidia -v "$PWD"/config.txt:/usr/local/etc/config.txt cedricwalter/docker-xmr-stak-nvidia
+$ nvidia-docker run --rm -itd --name some-xmr-stak-nvidia -v "$PWD"/config.txt:/usr/local/etc/config.txt cedricwalter/docker-xmr-stak-nvidia
 ```
 
 Use `--privileged` option for large pages support. Large pages need a properly set up OS.
@@ -79,6 +58,28 @@ This is the defacto image. By default the miner will donate 1% of the hashpower 
 ## `xmr-stak-nvidia:nodevfee`
 
 This variant has no donation fee.
+
+# Creating image from source 
+
+Install docker.io with this apt command:
+```sudo apt-get install docker.io
+```
+
+When the installation is finished, start the docker service and enable it to start at boot time:
+```sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+Docker has been installed and is running on the system.
+
+```git clone https://github.com/cedricwalter/docker-xmr-stak-nvidia.git
+cd docker-xmr-stak-nvidia
+
+docker build -t xmr-stak-nvidia .
+or
+cd nodevfee
+docker build -f xmr-stak-nvidia:nodevfee . 
+```
 
 # Donations
 
